@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'"> -->
+    <title>Blockchain Sniper Bot</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="style.css">
+        
+    <script defer src="render.min.js"></script>
+    
+</head>
+<body>
+    <div class="firstContainer">
+        <img class="logo" src='images/icon.ico' alt=""></img>
+        <h1>Blockchain Sniper Bot</h1>
+        <div class="divSelect">
+            <label class="select" for="Blockchain">CHOOSE A BLOCKCHAIN:</label>
+            <select class="blockchain" id="Blockchain" name="Blockchain">
+                <option value="bsc-testnet">BSC Testnet</option>
+                <option value="bsc-mainnet">BSC Mainnet</option>
+                <!-- <option value="ethereum">Ethereum</option> -->
+            </select>
+        </div>
+    </div>
+    <div class="bigContainer">
+    <div class="configContainer">
+        <h2 class="configure">Configure Sniper Bot</h2>
+        <div class="inputContainer">
+            
+
+                <div class="divLabel">
+                    <label class="config" for="toPurchase">TO PURCHASE (TOKEN ADDRESS):</label>
+                    <input type="text" id="toPurchase" class="toPurchase" placeholder="to purchase..." readonly>
+                </div>
+
+                <div class="divLabel">
+                    <label class="config" for="amountWBNB">AMOUNT (WBNB):</label>
+                    <input type="text" id="amountWBNB" class="amountWBNB" placeholder="amount of WBNB..."readonly>
+                </div>
+
+                <div class="divLabel">
+                    <label class="config" for="yourAddress">YOUR ADDRESS:</label>
+                    <input type="text" id="yourAddress" class="yourAddress" placeholder="your address..."readonly>
+                </div>
+
+                <div class="divLabel">
+                    <label class="config" for="buySlippage">BUY SLIPPAGE:</label>
+                    <input type="number" id="buySlippage" class="buySlippage" placeholder="buy slippage..."readonly>
+                </div>
+
+                <div class="divLabel">
+                    <label class="config" for="sellSlippage">SELL SLIPPAGE:</label>
+                    <input type="number" id="sellSlippage" class="sellSlippage" placeholder="sell slippage..."readonly>
+                </div>
+
+                <div class="divLabel">
+                    <label class="config" for="gasPrice">GAS PRICE(GWEI):</label>
+                    <input type="number" id="gasPrice" class="gasPrice" placeholder="gas price(GWEI)..."readonly>
+                </div>
+
+                <div class="divLabel">
+                    <label class="config" for="gasLimit">GAS LIMIT(AT LEAST 21000):</label>
+                    <input type="number" id="gasLimit" class="gasLimit" placeholder="gas limit(at least 21000)..."readonly>
+                </div>
+
+                <div class="divLabel">
+                    <label class="config" for="minLiq">MIN LIQUIDITY (WBNB):</label>
+                    <input type="number" id="minLiq" class="minLiq" placeholder="min liquidity.."readonly>
+                </div>
+
+                <div class="divLabel">
+                    <label class="config" for="targetProfit">TARGET PROFIT (%):</label>
+                    <input type="text" id="targetProfit" class="targetProfit" placeholder="Target Profit.." 
+                            onmousedown="MouseDownInput()" 
+                            onblur="BlurInput()" readonly>
+                </div>
+
+                <div class="divLabel">
+                    <label class="config" for="PrivateKey">ACCOUNT PRIVATE KEY:</label>
+                    <input type="password" id="PrivateKey" class="PrivateKey" placeholder="Account Private Key.."readonly>
+                    <i class="bi bi-eye-slash" id="toggle"></i>
+                </div>
+
+            <div>
+            <button class="inputBtns" id="modify" onClick="modify()">Modify</button>
+            <button class="inputBtns" onClick="save()">Save</button>
+            </div>
+        </div>
+        
+    </div>
+    <div class="logContainer">
+        <h2 class="logH2">Log</h2>
+        <div class="log" id="log"></div> 
+    </div>
+    </div>
+    <div class="btnContainer">
+        <button class="startBot" onClick="startBot()">Start Bot</button>
+        <button class="startBot" onClick="stopBot()">Stop Bot</button> 
+    </div>
+    
+    <script  src="console.min.js"></script>
+    <script  src="toggle.min.js"></script>
+
+</body>
+</html>

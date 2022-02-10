@@ -1,0 +1,58 @@
+{
+  "name": "blockchain-sniper-bot",
+  "productName": "BlockChainSniperBot",
+  "version": "1.0.0",
+  "description": "",
+  "target": "es5",
+  "main": "main.min.js",
+  "scripts": {
+    "start": "electron .",
+    "package-win": "electron-packager . blockchain-sniper-bot --overwrite --asar --platform=win32 --arch=ia32 --icon=./assets/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"BlockChainSniperBot\"",
+    "installer": "electron-builder"
+  },
+
+  "build": {
+    "appId": "BlockChain Sniper Bot",
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "images/icon.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "installerIcon": "images/icon.ico",
+      "uninstallerIcon": "images/icon.ico",
+      "uninstallDisplayName": "BlockChain Sniper Uninstaller",
+      "license": "license.md",
+      "allowToChangeInstallationDirectory": false
+    }
+  },
+
+
+  "author": "BSB",
+  "license": "ISC",
+  "dependencies": {
+    "@electron/remote": "github:electron/remote",
+    "chalk": "^5.0.0",
+    "cross-fetch": "^3.1.5",
+    "dialog": "^0.3.1",
+    "dotenv": "^11.0.0",
+    "electron-forge": "^5.2.4",
+    "electron-packager": "^15.4.0",
+    "ethers": "^5.5.3",
+    "express": "^4.17.2",
+    "fetch": "^1.1.0",
+    "fs": "^0.0.1-security",
+    "node-fetch": "^3.2.0",
+    "os": "^0.1.2",
+    "path": "^0.12.7",
+    "remote": "^0.2.6",
+    "saas": "^1.0.0",
+    "xhr2": "^0.2.1"
+  },
+  "devDependencies": {
+    "electron": "^16.0.7",
+    "electron-builder": "^22.14.5"
+  }
+}
